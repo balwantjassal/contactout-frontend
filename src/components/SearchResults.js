@@ -9,13 +9,13 @@ and if loaded then a user can add those items/movies to the favourite list for t
 */
 function SearchResults(props) {
     
-  let {data, isLoading, favourites, addFavourites, input} = props
+  let {data, isLoading, favourites, addFavourites, input, error} = props
   
   return (
   
     <>
     <span className="h5">
-            {(isLoading)? 'Searching ...':<span>Results for {data.length > 0 && `"${input}"`}</span>}
+           {(error)?{error}:<span>{(isLoading)? 'Searching ...':<span>Results for {data.length > 0 && `"${input}"`}</span>}</span>}
           </span>
           <hr />
          
