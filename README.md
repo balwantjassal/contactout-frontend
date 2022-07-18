@@ -5,7 +5,7 @@ This project is about searching your favourite movies online using an OMDB API.
 This project includes the following features:-
 
 * A user can perform live Search of movies using OMDB API
-* A user can find his favourite movie and can add it to nomination/favourite list.
+* A user can find their favourite movie and can add it to nomination/favourite list.
 * A nomination list can be maintained. A user can add or remove movies from the favourite list.
 * User friendly error messages can be displayed.
 
@@ -32,5 +32,7 @@ Link: https://github.com/balwantjassal/contactout-project
 
  
 ### Test Cases
-Case 1: Enter the normal string "ram"
-Case 2: Enter the numeric string "12344556"
+* Case 1: Enter the normal string "ram" (Run was successfull)
+* Case 2: Enter the numeric string "12344556"(Run was successfull with no results found)
+* Case 3: Enter the string with special characters like ^%%%$%$@#$ (Run was successfull with no results found)
+* Case 4: Tested its responsive device on different screens sizes.

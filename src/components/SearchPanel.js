@@ -20,7 +20,6 @@ function SearchPanel({ totalNominations }) {
   const [favourites, setFavourites] = useState([]) // List of favourites movies shortlisted by user
   const [isLoading, setIsLoading] = useState(null) // To see whether data is loaded or not
   const [showMsg, setShowMsg] = useState(null) // to display message to end user 
-  const [errObj, setErrObj] = useState(null) // To handle any exception
 
   // This function handles form submission.
   // It requires OMDB API access key to function properly and this key is mentioned in .env file
@@ -42,7 +41,6 @@ function SearchPanel({ totalNominations }) {
       })
       .catch((err) => {
         setIsLoading(false);
-        setErrObj('Results not Found')
         console.log(err)
       
       });
@@ -104,7 +102,7 @@ function SearchPanel({ totalNominations }) {
             favourites={favourites}
             addFavourites={addFavourites}
             input={input}
-            error={errObj}
+            
           />
         </div>
         <div className="col-md-6">
