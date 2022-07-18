@@ -12,7 +12,7 @@ function InputSearchBox(props) {
     <>
       <form id="searchFrm" name="searchFrm" onSubmit={props.handleSubmit}>
         <div className="form-group">
-          <label htmlFor="inputTitle">Title</label>
+          <label htmlFor="inputTitle" className="h3">Title</label>
           <div className="input-group mb-3">
             <div className="input-group-prepend bg-white">
               <span className="input-group-text p-3" id="basic-addon1">
