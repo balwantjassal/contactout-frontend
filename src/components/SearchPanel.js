@@ -4,17 +4,24 @@ import InputSearchBox from "./InputSearchBox";
 import SearchResults from "./SearchResults";
 import Favourites from "./Favourites";
 import Message from "./Message";
+
 /* *************Project Description Starts***************/
-/**/
+/*This SearchPanel component is the parent component containing other usefull search panel components listed below..
+  1. InputSearchBox (To handle all types of input with actions)
+  2. SearchResults (To holds all the search results of the given search string)
+  3. Favorites (To hold the list of favourites movies nominated by the user )
+  4. Message (This component is created to display banner messages for 5 seconds)
+  */
 /* *************Project Description Ends ***************/
 
-function SearchPanel() {
-  const [input, setInput] = useState(""); // This is string to be searched
-  const [data, setData] = useState([]);
-  const [favourites, setFavourites] = useState([]);
-  const [isLoading, setIsLoading] = useState(null);
-  const[showMsg, setShowMsg] = useState(null)
+function SearchPanel({ totalNominations }) {
+  const [input, setInput] = useState("") // To hold the value of string to be searched
+  const [data, setData] = useState([]) // Results of search query
+  const [favourites, setFavourites] = useState([]) // List of favourites movies shortlisted by user
+  const [isLoading, setIsLoading] = useState(null) // To see whether data is loaded or not
+  const[showMsg, setShowMsg] = useState(null) // to display message to end user 
 
+  // This function handles form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
@@ -30,27 +37,31 @@ function SearchPanel() {
         }
       })
       .catch((err) => console.log(err));
-    console.log("Submitted");
+   
   };
 
+  // To set the value of input field
   const handleInputChange = async (e) => {
     setInput(e.target.value);
 
-    //console.log(data)
+   
   };
 
+  // Function to add favorite movie into the nomination list
   const addFavourites = (movie) => {
-    //Check if a movie is already in favourite list -1 it does not exist
 
+    //Check if a movie is already in favourite list -1 it does not exist
     const idx = favourites.indexOf(movie);
     
-    if (favourites.length < 5 && idx == -1) {
-      setFavourites([...favourites, movie]);
-     
+    // Check favourite list should not exceed total nominations and it should be unique 
+    if (favourites.length < totalNominations && idx == -1) {
 
+      setFavourites([...favourites, movie]);
     }
-    if(favourites.length == 5){
-      setShowMsg('Only 5 nominations are allowed.')
+    
+    //If nominations list is full then display messages
+    if(favourites.length == totalNominations){
+      setShowMsg(`Only ${totalNominations} nominations are allowed.`)
       setTimeout(() => {
         setShowMsg(null)
       }, 5000)
@@ -58,15 +69,19 @@ function SearchPanel() {
     
   };
 
+  // To remove items from favourite list on click of remove button
   const removeFavourites = (movie) => {
     let newFavourites = [...favourites];
     const idx = newFavourites.indexOf(movie);
     newFavourites.splice(idx, 1);
     setFavourites(newFavourites);
   };
+
   return (
     <>
     <header className="h2 p-3 text-center bg-light">Search and nominate your favourite movie's</header>
+    <main>
+
       <InputSearchBox
         input={input}
         handleChange={handleInputChange}
@@ -86,10 +101,11 @@ function SearchPanel() {
           <Favourites
             favourites={favourites}
             removeFavourites={removeFavourites}
-            msgComp={(showMsg)?<Message detail={showMsg} />:null}
+            bannerComp={(showMsg)?<Message detail={showMsg} />:null}
           />
         </div>
       </div>
+      </main>
     </>
   );
 }

@@ -1,5 +1,12 @@
 import React from 'react'
+/* 
+***********Start****************** 
+This component has been created to display the search results of an input string. 
+This is a kind of controlled component which renders the search results based on props. It checks whether the items are loaded or not 
+and if loaded then a user can add those items/movies to the favourite list for the nominations.It also disable the item which is added to to the favourite list.  
 
+**************Ends ***************
+*/
 function SearchResults(props) {
     
   let {data, isLoading, favourites, addFavourites, input} = props
