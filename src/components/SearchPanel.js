@@ -23,7 +23,7 @@ function SearchPanel({ totalNominations }) {
 
   // This function handles form submission.
   // It requires OMDB API access key to function properly and this key is mentioned in .env file
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
@@ -35,6 +35,7 @@ function SearchPanel({ totalNominations }) {
           setIsLoading(false);
           setData(rec.Search);
         } else {
+          setIsLoading(false);
           setData([]);
         }
       })
