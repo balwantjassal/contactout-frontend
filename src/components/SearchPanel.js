@@ -4,8 +4,11 @@ import InputSearchBox from "./InputSearchBox";
 import SearchResults from "./SearchResults";
 import Favourites from "./Favourites";
 import Message from "./Message";
+/* *************Project Description Starts***************/
+/**/
+/* *************Project Description Ends ***************/
 
-function SearchBox() {
+function SearchPanel() {
   const [input, setInput] = useState(""); // This is string to be searched
   const [data, setData] = useState([]);
   const [favourites, setFavourites] = useState([]);
@@ -63,6 +66,7 @@ function SearchBox() {
   };
   return (
     <>
+    <header className="h2 p-3 text-center bg-light">Search and nominate your favourite movie's</header>
       <InputSearchBox
         input={input}
         handleChange={handleInputChange}
@@ -90,4 +94,4 @@ function SearchBox() {
   );
 }
 
-export default SearchBox;
+export default SearchPanel;
