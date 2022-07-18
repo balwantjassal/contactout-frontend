@@ -15,11 +15,13 @@ Make sure that NodeJS and ReactJS is installed on your system.
 
 * Node version 16.15.0 or higher
 * React 18.2.0 or higher
+* Git Module
 * Any Browser of your choice 
 
 ### How to run this project
+To download and run this project
 
-
+* Git clone https://github.com/balwantjassal/contactout-project
 * Go to the root of your project folder example : cd contactout-project/
 * To Run in development mode use command: npm start
 * To run in production environment: npm build
