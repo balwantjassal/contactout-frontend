@@ -39,7 +39,12 @@ function SearchPanel({ totalNominations }) {
           setData([]);
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        setIsLoading(false);
+
+        console.log(err)
+      
+      });
    
   };
 

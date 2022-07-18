@@ -32,4 +32,5 @@ Link: https://github.com/balwantjassal/contactout-project
 
  
 ### Test Cases
-
+Case 1: Enter the normal string "ram"
+Case 2: Enter the numeric string "12344556"
