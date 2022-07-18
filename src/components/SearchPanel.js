@@ -21,12 +21,14 @@ function SearchPanel({ totalNominations }) {
   const [isLoading, setIsLoading] = useState(null) // To see whether data is loaded or not
   const[showMsg, setShowMsg] = useState(null) // to display message to end user 
 
-  // This function handles form submission
+  // This function handles form submission.
+  // It requires OMDB API access key to function properly and this key is mentioned in .env file
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
 
-    await fetch(`http://www.omdbapi.com/?apikey=7053e632&s=${input}`)
+    await fetch(`${process.env.REACT_APP_MOVIES_URL}/?apikey=${process.env.REACT_APP_OMDB_API_KEY}&s=${input}`)
       .then((res) => res.json())
       .then((rec) => {
         if (rec.Response === "True") {

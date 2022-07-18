@@ -13,6 +13,7 @@ function App() {
     <>
       <div className="container-fluid p-4 bg-light">
         <div className="container bg-white p-4">
+          
           {/*This is the search panel for five nominations. If you want to have more nominations then simply change the totalNominations props of search panel*/}
           <SearchPanel totalNominations="5" />
         </div>
