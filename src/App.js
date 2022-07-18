@@ -1,6 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import SearchBox from "./components/SearchBox";
+
 function App() {
   return (
     <>
