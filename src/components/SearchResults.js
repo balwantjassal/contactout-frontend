@@ -44,14 +44,14 @@ function SearchResults(props) {
 
   return (
     <>
-      <span className="h5">
+      <div className="h5">
         
         {isLoading ? (
           "Searching ..."
         ) : (
           <div className="text-truncate col-11">Results for { `"${input}"`}</div>
         )}
-      </span>
+      </div>
       <hr />  
 
       {(data.length>0) ? (

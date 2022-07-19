@@ -12,7 +12,7 @@ function InputSearchBox(props) {
     <>
       <form id="searchFrm" name="searchFrm" onSubmit={props.handleSubmit}>
         <div className="form-group">
-          <label htmlFor="inputTitle" className="h3">Title</label>
+          <label htmlFor="inputTitle" className="h5">Title</label>
           <div className="input-group mb-3">
             <div className="input-group-prepend bg-white">
               <span className="input-group-text p-3" id="basic-addon1">
@@ -25,7 +25,7 @@ function InputSearchBox(props) {
               className="form-control"
               id="title"
               name="title"
-              placeholder="Search By Title"
+              placeholder="Search Movie By Title"
               aria-label="Title"
               aria-describedby="basic-addon1"
               value={props.input}

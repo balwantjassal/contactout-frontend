@@ -12,7 +12,7 @@ function Favourites(props) {
 
   return (
     <>
-      <span className="h5 p-2">
+      <span className="h5">
         Nominations {" "}
         <span className="badge bg-primary">{favourites.length} </span>{" "}
         {bannerComp && 
