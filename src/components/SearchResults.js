@@ -49,10 +49,10 @@ function SearchResults(props) {
         {isLoading ? (
           "Searching ..."
         ) : (
-          <span>Results for { `"${input}"`}</span>
+          <div className="text-truncate col-11">Results for { `"${input}"`}</div>
         )}
       </span>
-      <hr />
+      <hr />  
 
       {(data.length>0) ? (
         <ul className="list-group">
